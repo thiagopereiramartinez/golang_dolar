@@ -9,19 +9,19 @@ import (
 
 const (
 	SPREAD float32 = 4.0
-	IOF float32 = 6.38
+	IOF    float32 = 6.38
 )
 
 type cotacaoDolarFetch struct {
-	Context string          `json:"@odata.context"`
+	Context  string         `json:"@odata.context"`
 	Cotacoes []CotacaoDolar `json:"value"`
 }
 
 type CotacaoDolar struct {
-	Compra float32 `json:"cotacaoCompra"`
-	Venda float32 `json:"cotacaoVenda"`
-	DataHora string `json:"dataHoraCotacao"`
-	TotalCartaoCredito float32 `json:"totalCartaoCredito"`
+	Compra             float32 `json:"cotacaoCompra"`
+	Venda              float32 `json:"cotacaoVenda"`
+	DataHora           string  `json:"dataHoraCotacao"`
+	TotalCartaoCredito float32 `json:"cotacaoCartaoCredito"`
 }
 
 func (c *CotacaoDolar) calcularTotal() {
@@ -48,7 +48,7 @@ func ObterCotacao(data time.Time, cotacao chan CotacaoDolar) (err error) {
 	}
 
 	if len(fetch.Cotacoes) == 0 {
-		ObterCotacao(data.Add(-1 * time.Hour * 24), cotacao)
+		ObterCotacao(data.Add(-1*time.Hour*24), cotacao)
 		return
 	}
 
