@@ -3,7 +3,7 @@ package dolar
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/thiagopereiramartinez/dolar/bcb"
+	"github.com/thiagopereiramartinez/golang_dolar/bcb"
 	"net/http"
 	"time"
 )
