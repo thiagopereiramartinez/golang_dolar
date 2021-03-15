@@ -1,3 +1,5 @@
+[![CI](https://github.com/thiagopereiramartinez/golang_dolar/actions/workflows/main.yml/badge.svg)](https://github.com/thiagopereiramartinez/golang_dolar/actions/workflows/main.yml)
+
 ## Cotação do dólar
 
 ```shell script
